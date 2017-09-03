@@ -21,9 +21,9 @@
 <body>
 
 <!--header start-->
-<div class="row header">
+<div class="header row">
 <div class="col-lg-6">
-<span class="logo">Test Your Skill</span></div>
+<span class="logo">M-QUIZ APPLICATION</span></div>
 <div class="col-md-2">
 </div>
 <div class="col-md-4">
@@ -89,25 +89,23 @@ echo '<a href="logout.php?q=feedback.php" class="pull-right sub1 btn title3"><sp
 <div class="row">
 <div class="col-md-3"></div>
 <div class="col-md-6 panel" style="background-image:url(image/bg1.jpg); min-height:430px;">
-<h2 align="center" style="font-family:'typo'; color:#000066">FEEDBACK/REPORT A PROBLEM</h2>
+<h2 align="center" style="font-family:'typo'; color:#000066">FEEDBACK/SUGGESTIONS</h2>
 <div style="font-size:14px">
 <?php if(@$_GET['q'])echo '<span style="font-size:18px;"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;'.@$_GET['q'].'</span>';
 else
 {echo' 
-You can send us your feedback through e-mail on the following e-mail id:<br />
 <div class="row">
 <div class="col-md-1"></div>
 <div class="col-md-10">
-<a href="mailto:chiraggoel.53784@gmail.com" style="color:#000000">sunnygkp10@gmail.com</a><br /><br />
 </div><div class="col-md-1"></div></div>
-<p>Or you can directly submit your feedback by filling the enteries below:-</p>
 <form role="form"  method="post" action="feed.php?q=feedback.php">
 <div class="row">
-<div class="col-md-3"><b>Name:</b><br /><br /><br /><b>Subject:</b></div>
+<div class="col-md-3"><b>Name:</b><br /></div>
 <div class="col-md-9">
 <!-- Text input-->
 <div class="form-group">
   <input id="name" name="name" placeholder="Enter your name" class="form-control input-md" type="text"><br />    
+  <b>Subject:</b>
    <input id="name" name="subject" placeholder="Enter subject" class="form-control input-md" type="text">    
 
 </div>
@@ -125,6 +123,7 @@ You can send us your feedback through e-mail on the following e-mail id:<br />
 </div><!--End of row-->
 
 <div class="form-group"> 
+<b>Feedback:</b>
 <textarea rows="5" cols="8" name="feedback" class="form-control" placeholder="Write feedback here..."></textarea>
 </div>
 <div class="form-group" align="center">
@@ -140,13 +139,9 @@ You can send us your feedback through e-mail on the following e-mail id:<br />
 <!--Footer start-->
 <div class="row footer">
 <div class="col-md-3 box">
-<a href="http://www.netcamp.in" target="_blank">About us</a>
-</div>
-<div class="col-md-3 box">
 <a href="#" data-toggle="modal" data-target="#login">Admin Login</a></div>
 <div class="col-md-3 box">
 <a href="#" data-toggle="modal" data-target="#developers">Developers</a>
-
 </div>
 <div class="col-md-3 box">
 <a href="feedback.php" target="_blank">Feedback</a></div></div>
@@ -156,38 +151,33 @@ You can send us your feedback through e-mail on the following e-mail id:<br />
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" style="font-family:'typo' "><span style="color:orange">Developers</span></h4>
+        <h2 style="text-align:center; font-family:'typo' "><span style="color:orange">Developers</span></h2>
       </div>
 	  
       <div class="modal-body">
-        <p>
-		<div class="row">
-		<div class="col-md-4">
-		 <img src="image/CAM00121.jpg" width=100 height=100 alt="Sunny Prakash Tiwari" class="img-rounded">
-		 </div>
-		 <div class="col-md-5">
-		<a href="https://www.facebook.com/sunnygkp10" style="color:#202020; font-family:'typo' ; font-size:18px" title="Find on Facebook">Sunny Prakash Tiwari</a>
-		<h4 style="color:#202020; font-family:'typo' ;font-size:16px" class="title1">+917785068889</h4>
-		<h4 style="font-family:'typo' ">sunnygkp10@gmail.com</h4>
-		<h4 style="font-family:'typo' ">Kamla Nehru Institute Of Technology ,Sultanpur</h4></div></div>
-		</p>
+		<div>
+		 <div style="text-align:center">
+<a href="#" style="color:#202020; font-family:'typo' ; font-size:18px">Vibhore Gupta&emsp;&nbsp;&nbsp;&nbsp;&nbsp;15BCE0003</a><br />
+<hr /><a href="#" style="color:#202020; font-family:'typo' ; font-size:18px">Ayush Nigam&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15BCE0638</a><br /><hr />
+		<a href="#" style="color:#202020; font-family:'typo' ; font-size:18px">Shikher Srivastava&emsp;15BCE0882</a><br /><hr />
       </div>
     
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
+</div>
+</div>
 <!--Modal for admin login-->
 	 <div class="modal fade" id="login">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title"><span style="color:orange;font-family:'typo' ">LOGIN</span></h4>
+        <h4 class="modal-title"><span style="color:orange;font-family:'typo' ">ADMINISTRATOR LOGIN</span></h4>
       </div>
       <div class="modal-body title1">
 <div class="row">
-<div class="col-md-3"></div>
+<div class="col-md-3">E-MAIL:<br /><br /><br />PASSWORD:</div>
 <div class="col-md-6">
 <form role="form" method="post" action="admin.php?q=index.php">
 <div class="form-group">
@@ -200,7 +190,7 @@ You can send us your feedback through e-mail on the following e-mail id:<br />
 <input type="submit" name="login" value="Login" class="btn btn-primary" />
 </div>
 </form>
-</div><div class="col-md-3"></div></div>
+</div></div>
       </div>
       <!--<div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

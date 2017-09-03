@@ -1,10 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>NETCAMP || TEST YOUR SKILL </title>
+<title>QUIZ</title>
 <link  rel="stylesheet" href="css/bootstrap.min.css"/>
  <link  rel="stylesheet" href="css/bootstrap-theme.min.css"/>    
  <link rel="stylesheet" href="css/main.css">
@@ -28,7 +25,7 @@ include_once 'dbConnection.php';
 <div class="header">
 <div class="row">
 <div class="col-lg-6">
-<span class="logo">Test Your Skill</span></div>
+<span class="logo">M-QUIZ APPLICATION</span></div>
 <div class="col-md-4 col-md-offset-2">
  <?php
  include_once 'dbConnection.php';
@@ -60,7 +57,6 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><b>Netcamp</b></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -78,6 +74,7 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
       </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav><!--navigation menu closed-->
+<div class="bg2">
 <div class="container"><!--container start-->
 <div class="row">
 <div class="col-md-12">
@@ -87,7 +84,7 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
 
 $result = mysqli_query($con,"SELECT * FROM quiz ORDER BY date DESC") or die('Error');
 echo  '<div class="panel"><table class="table table-striped title1">
-<tr><td><b>S.N.</b></td><td><b>Topic</b></td><td><b>Total question</b></td><td><b>Marks</b></td><td><b>Time limit</b></td><td></td></tr>';
+<tr><td><b>S. No.</b></td><td><b>Topic</b></td><td><b>Total question</b></td><td><b>Marks</b></td><td><b>Time limit</b></td><td></td></tr>';
 $c=1;
 while($row = mysqli_fetch_array($result)) {
 	$title = $row['title'];
@@ -220,36 +217,30 @@ echo'</table></div>';
 //ranking start
 if(@$_GET['q']== 3) 
 {
-$q=mysqli_query($con,"SELECT * FROM rank  ORDER BY score DESC " )or die('Error223');
+$q=mysqli_query($con,"SELECT * FROM rank ORDER BY score DESC " )or die('Error223');
 echo  '<div class="panel title">
-<table class="table table-striped title1" >
-<tr style="color:red"><td><b>Rank</b></td><td><b>Name</b></td><td><b>Gender</b></td><td><b>College</b></td><td><b>Score</b></td></tr>';
+<table class="table table-striped title1">
+<tr style="color:red"><th><b>Rank</b></th><th><b>Name</b></th><th><b>Gender</b></th><th><b>Score</b></th></tr>';
 $c=0;
 while($row=mysqli_fetch_array($q) )
 {
 $e=$row['email'];
 $s=$row['score'];
-$q12=mysqli_query($con,"SELECT * FROM user WHERE email='$e' " )or die('Error231');
-while($row=mysqli_fetch_array($q12) )
+$q12=mysqli_query($con,"SELECT * FROM user WHERE email='$e'" )or die('Error231');
+while($row=mysqli_fetch_array($q12))
 {
 $name=$row['name'];
 $gender=$row['gender'];
-$college=$row['college'];
 }
 $c++;
-echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$name.'</td><td>'.$gender.'</td><td>'.$college.'</td><td>'.$s.'</td><td>';
+echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$name.'</td><td>'.$gender.'</td><td>'.$s.'</td><td>';
 }
 echo '</table></div>';}
 ?>
-
-
-
 </div></div></div></div>
+</div>
 <!--Footer start-->
 <div class="row footer">
-<div class="col-md-3 box">
-<a href="http://www.netcamp.in" target="_blank">About us</a>
-</div>
 <div class="col-md-3 box">
 <a href="#" data-toggle="modal" data-target="#login">Admin Login</a></div>
 <div class="col-md-3 box">
@@ -263,38 +254,33 @@ echo '</table></div>';}
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" style="font-family:'typo' "><span style="color:orange">Developers</span></h4>
+        <h2 style="text-align:center; font-family:'typo' "><span style="color:orange">Developers</span></h2>
       </div>
 	  
       <div class="modal-body">
-        <p>
-		<div class="row">
-		<div class="col-md-4">
-		 <img src="image/CAM00121.jpg" width=100 height=100 alt="Sunny Prakash Tiwari" class="img-rounded">
-		 </div>
-		 <div class="col-md-5">
-		<a href="https://www.facebook.com/sunnygkp10" style="color:#202020; font-family:'typo' ; font-size:18px" title="Find on Facebook">Sunny Prakash Tiwari</a>
-		<h4 style="color:#202020; font-family:'typo' ;font-size:16px" class="title1">+917785068889</h4>
-		<h4 style="font-family:'typo' ">sunnygkp10@gmail.com</h4>
-		<h4 style="font-family:'typo' ">Kamla Nehru Institute Of Technology ,Sultanpur</h4></div></div>
-		</p>
+		<div>
+		 <div style="text-align:center">
+<a href="#" style="color:#202020; font-family:'typo' ; font-size:18px">Vibhore Gupta&emsp;&nbsp;&nbsp;&nbsp;&nbsp;15BCE0003</a><br />
+<hr /><a href="#" style="color:#202020; font-family:'typo' ; font-size:18px">Ayush Nigam&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15BCE0638</a><br /><hr />
+		<a href="#" style="color:#202020; font-family:'typo' ; font-size:18px">Shikher Srivastava&emsp;15BCE0882</a><br /><hr />
       </div>
     
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
+</div>
+</div>
 <!--Modal for admin login-->
 	 <div class="modal fade" id="login">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title"><span style="color:orange;font-family:'typo' ">LOGIN</span></h4>
+        <h4 class="modal-title"><span style="color:orange;font-family:'typo' ">ADMINISTRATOR LOGIN</span></h4>
       </div>
       <div class="modal-body title1">
 <div class="row">
-<div class="col-md-3"></div>
+<div class="col-md-3">E-MAIL:<br /><br /><br />PASSWORD:</div>
 <div class="col-md-6">
 <form role="form" method="post" action="admin.php?q=index.php">
 <div class="form-group">
@@ -307,7 +293,7 @@ echo '</table></div>';}
 <input type="submit" name="login" value="Login" class="btn btn-primary" />
 </div>
 </form>
-</div><div class="col-md-3"></div></div>
+</div></div>
       </div>
       <!--<div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -316,6 +302,7 @@ echo '</table></div>';}
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!--footer end-->
+
 
 
 </body>
